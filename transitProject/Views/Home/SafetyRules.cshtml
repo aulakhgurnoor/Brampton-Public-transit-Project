@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Safety Rules";
+     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!doctype html>
+<html>
+<head>
+    <title>Safety Rules</title>
+
+
+    <link href="@Url.Content("~/Styles/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
+
+
+</head>
+<body>
+    <div>
+        <img id="image1" src="~/Content/images/sateyRules.jpg" alt="Brampton" style="width:100%;" class="img-responsive" />
+    </div>
+
+
+    <div class="container">
+        <h2 style="text-align:center; color:brown; font-weight:bold;">New Covid-19 Safety rules</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="~/Content/images/Mask.png" target="_blank">
+                        <img src="~/Content/images/Mask.png" alt="Lights" style="width:100%">
+                        <div class="caption">
+                            <p>
+                                All riders are required to wear a non-medical mask on buses and at terminals.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="~/Content/images/FrontDoorBoarding.png" target="_blank">
+                        <img src="~/Content/images/FrontDoorBoarding.png" style="width:100%">
+                        <div class="caption">
+                            <p>
+                                All riders are required to board through the front doors and exit through the rear doors.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="~/Content/images/PRESTOcard.png" target="_blank">
+                        <img src="~/Content/images/PRESTOcard.png" alt="Fjords" style="width:100%">
+                        <div class="caption">
+                            <p>Riders are encouraged to use PRESTO as a contactless form of payment.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <b style="font-size:medium;"><u>Bus Capacity</u></b><br /><br />
+            <p>
+                Buses will operate at an increased capacity. All riders and Operators are required to wear non-medical masks.
+                <br />
+                The maximum number of passengers allowed on each bus will be:<br />
+                40 foot bus: 35 people<br />
+                60 foot bus: 55 people<br />
+                This increased capacity is equivalent to a full-seated load. Passengers can choose to sit or stand.<br />
+            </p>
+            <br />
+            <b style="font-size:medium;"><u>Safety Tips</u></b><br /><br />
+            <p>
+                To help stop the spread of COVID-19 and to ensure the safety of everyone on board, please continue to practice these health and safety measures.<br />
+                <ul>
+                    <li>Physical Distancing: Please continue to maintain space between you and the people around you, and follow all signage and floor markings.</li>
+                    <li>  Wash Your Hands: Wash your hands often with soap and water for at least 20 seconds. Use an alcohol based hand sanitizer when on the go.</li>
+                    <li>
+                        Cover Your Mouth: Cover coughs and sneezes with a tissue or elbow, and wash or sanitize your hands afterwards.
+                    </li>
+                </ul>
+                Feeling Sick? Please DO NOT travel if you are feeling unwell.
+            </p>
+
+        </div>
+    </div>
+
+</body>
+</html>
+

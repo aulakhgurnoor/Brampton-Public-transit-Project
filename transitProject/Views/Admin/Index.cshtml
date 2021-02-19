@@ -1,0 +1,90 @@
+﻿@*@model IEnumerable<transitProject.Models.Stop>*@
+@model PagedList.IPagedList<transitProject.Models.Stop>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Stops";
+    Layout = "~/Views/Shared/adminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Add New", "Create")
+</p>
+@using (Html.BeginForm("Index", "Admin", FormMethod.Get))
+{
+    <p>
+        Search by StopName/Source/Destination : @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th> STOP ID</th>
+        @*<th> STOP NAME</th>*@
+        <th>
+            @Html.ActionLink("STOP NAME", "Index", new { sortOrder = ViewBag.StopNameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th> SOURCE</th>
+        <th> DESTINATION</th>
+        @*<th> ETA</th>*@
+        <th>
+            @Html.ActionLink("ETA", "Index", new { sortOrder = ViewBag.EtaSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.stopId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stopName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.source)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eta)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.stopId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stopName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.source)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eta)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.stopId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.stopId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.stopId })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+
+<div>
+    @Html.ActionLink("Refresh", "Index")
+</div>

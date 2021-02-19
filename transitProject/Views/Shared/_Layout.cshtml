@@ -1,0 +1,88 @@
+﻿@using Microsoft.AspNet.Identity
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - This is PUBLIC USER</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+   
+
+</head>
+<body>
+    @*Navigation Bar starts Here*@
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#000080;">
+        <div class="container">
+            <div class="navbar-header" style="color:#FEFCFF; font-weight:bold;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Public Transit", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="color:#FEFCFF; font-weight:bold;">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Safety Rules", "SafetyRules", "Home")</li>
+                    <li>@Html.ActionLink("Search Route", "Index", "User")</li>
+                    <li>@Html.ActionLink("Contact Us", "Contact", "User")</li>
+
+                    @*Dropdown Bar starts Here*@
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            User
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+
+                            <li> @Html.ActionLink("Event Calender", "GetCalendar", "User")</li>
+                            <li>@Html.ActionLink("Map", "Map", "User")</li>
+                            <li>@Html.ActionLink("FAQ", "Faq", "User")</li>
+                            <li>@Html.ActionLink("Fare Policy", "Fares", "User")</li>
+                        </ul>
+                    </li>
+                </ul>
+               
+                @*Dropdown Bar starts Here*@
+                <ul class="nav navbar-nav navbar-right" style="color:#FEFCFF; font-weight:bold;">
+
+
+
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Login
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Admin Login", "AdminLogin", "Admin")</li>
+
+                            <li>@Html.ActionLink("AppliactionOwner Login", "OwnerLogin", "Owner")</li>
+                        </ul>
+
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+
+                @*Navigation Bar ends Here*@
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+
+    </div>
+    
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>
+

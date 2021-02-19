@@ -1,0 +1,53 @@
+﻿@model transitProject.Models.Stop
+
+@{
+    ViewBag.Title = "Public Transit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Search Routes</h2>
+@using (Html.BeginForm("Display", "User", FormMethod.Post))
+
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<label>Source<span style="color:red;">*</span></label>    
+<select id="SelectSource" name="SelectSource">
+
+        <option value="">Select</option>
+        <option value="Brampton Terminal">Brampton Terminal</option>
+
+        <option value="Mount Pleasant Go">Mount Pleasant Go</option>
+        <option value="Humber College">Humber College</option>
+
+        <option value="Square One">Square One</option>
+        @Html.ValidationMessageFor(model => model.source, "", new { @class = "text-danger" })
+
+
+    </select>
+
+    @:&ensp;
+<label>Destination<span style="color:red;">*</span></label>    
+<select id="SelectDestination" name="SelectDestination">
+        <option value="">Select</option>
+        <option value="Humber College">Humber College</option>
+
+        <option value="Square One">Square One</option>
+        <option value="Brampton Terminal">Brampton Terminal</option>
+
+        <option value="Mount Pleasant Go">Mount Pleasant Go</option>
+        @Html.ValidationMessageFor(model => model.source, "", new { @class = "text-danger" })
+
+
+    </select>
+
+    <br />
+
+    <br />
+    <br />
+    <br />
+
+
+    <input id="Submit" type="submit" value="Search" />
+}
+

@@ -1,0 +1,42 @@
+﻿@model transitProject.Models.Admin
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/ownerLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Admin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("ADMIN ID")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adminId)
+        </dd>
+        <dt>
+            @Html.DisplayName("USERNAME")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("PASSWORD")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.adminId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

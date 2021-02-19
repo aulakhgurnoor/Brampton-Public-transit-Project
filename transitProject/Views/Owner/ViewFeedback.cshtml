@@ -1,0 +1,55 @@
+﻿@model IEnumerable<transitProject.Models.Feedback>
+
+@{
+    ViewBag.Title = "ViewFeedback";
+    Layout = "~/Views/Shared/ownerLayout.cshtml";
+}
+
+<h2>ViewFeedback</h2>
+
+
+<table class="table">
+    <tr>
+        <th>FULL NAME</th>
+        <th>EMAIL</th>
+        <th>MESSAGE</th>
+        <th>
+            @Html.DisplayNameFor(model => model.FeedbackDate)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th></th>*@
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.FullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Message)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FeedbackDate)
+    </td>
+    <td>
+
+        @Html.ActionLink("Details", "DetailsFeedback", new { id = item.Id })
+
+    </td>
+</tr>
+    }
+
+</table>

@@ -1,0 +1,57 @@
+﻿@model transitProject.Models.Stop
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/adminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Stop</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("STOP ID")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.stopId)
+        </dd>
+        <dt>
+            @Html.DisplayName("STOP NAME")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stopName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("SOURCE")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.source)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("DESTINATION")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.destination)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("ETA")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.stopId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

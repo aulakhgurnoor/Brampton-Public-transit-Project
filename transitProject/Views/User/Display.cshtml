@@ -1,0 +1,46 @@
+﻿@model IEnumerable<transitProject.Models.Stop>
+
+@{
+    ViewBag.Title = "Display";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Display</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>
+    @Html.ActionLink("Back", "Index")
+</p>
+<table class="table">
+    <tr>
+        <th> STOP ID</th>
+        <th> STOP NAME</th>
+        <th> SOURCE</th>
+        <th> DESTINATION</th>
+        <th> ETA</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.stopId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stopName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.source)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eta)
+            </td>
+
+        </tr>
+    }
+
+</table>

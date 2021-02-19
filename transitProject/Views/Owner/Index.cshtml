@@ -1,0 +1,71 @@
+﻿@*@model IEnumerable<transitProject.Models.Admin>*@
+@model PagedList.IPagedList<transitProject.Models.Admin>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/ownerLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Add New", "Create")
+</p>
+@using (Html.BeginForm("Index", "Owner", FormMethod.Get))
+{
+<p>
+    Search by ADMIN USERNAME : @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+    <input type="submit" value="Search" />
+</p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("ADMIN ID", "Index", new { sortOrder = ViewBag.AdminIdSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("ADMIN USERNAME", "Index", new { sortOrder = ViewBag.UserNameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>PASSWORD</th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.adminId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.userName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.adminId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.userName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.adminId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.adminId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.adminId })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+<div>
+    @Html.ActionLink("Refresh", "Index")
+</div>

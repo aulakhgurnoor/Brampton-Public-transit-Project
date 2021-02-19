@@ -1,0 +1,280 @@
+﻿
+@{
+    ViewBag.Title = "Fares Policy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Fares Policy</h2>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    .button {
+        background-color: darkblue;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+
+</script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#btnShowModal").click(function () {
+            $("#loginModal").modal('show');
+        });
+
+        $("#btnHideModal").click(function () {
+            $("#loginModal").modal('hide');
+        });
+        $("#btnShowModal1").click(function () {
+            $("#loginModal1").modal('show');
+        });
+
+        $("#btnHideModal1").click(function () {
+            $("#loginModal1").modal('hide');
+        });
+        $("#btnShowModal2").click(function () {
+            $("#loginModal2").modal('show');
+        });
+
+        $("#btnHideModal2").click(function () {
+            $("#loginModal2").modal('hide');
+        });
+        $("#btnShowModal3").click(function () {
+            $("#loginModal3").modal('show');
+        });
+
+        $("#btnHideModal3").click(function () {
+            $("#loginModal3").modal('hide');
+        });
+        $("#btnShowModal4").click(function () {
+            $("#loginModal4").modal('show');
+        });
+
+        $("#btnHideModal4").click(function () {
+            $("#loginModal4").modal('hide');
+        });
+    });
+</script>
+<!--<div class="well well-lg" style="color:#000080; text-align:center; font-size:30px; font-weight:bold;">Transit Fares</div>-->
+<div>
+    <img src="@Url.Content("~/Content/images/bus4.jpg")" alt="my pic" style="width:100%;" />
+</div>
+<div class="container">
+    <!-- button 1-->
+    <div class="row">
+        <div class="col-xs-12">
+
+            <button id="btnShowModal" type="button"
+                    class="btn btn-sm btn-default pull-left col-lg-11 button button4">
+                TRANSFERS AND CONNECTING TRANSIT
+            </button>
+
+            <div class="modal fade" tabindex="-1" id="loginModal"
+                 data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>
+                                As you pay your cash fare, request a transfer from the Operator and you will be entitled to unlimited travel for the duration of the transfer. Transfers expire two hours from the time of issue.
+
+                                Show the transfer to the bus operator each time you board a bus to verify that it is valid. Expired transfers will not be accepted or reissued. Passengers are required to pay the regular fare once their transfer is expired. In the event of a fare dispute, passengers are asked to pay the correct fare and contact Customer Service at 905.874.2999. Keep the disputed transfer and record the four-digit bus number, date, and time of the occurrence.
+
+                            </p><p>
+                                <b>Important:</b> Transfers are only valid for use by the customer to whom the transfer was issued.
+
+                                When using PRESTO, the transfer is automatically stored on your card, allowing you to travel for two hours from the time of issue. If you are connecting to or from GO Transit, the co-fare is automatically calculated on a PRESTO card.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btnHideModal" class="btn btn-primary button button4">
+                                OK
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- button 2-->
+    <div class="row">
+        <div class="col-xs-12">
+
+            <button id="btnShowModal1" type="button"
+                    class="btn btn-sm btn-default pull-left col-lg-11 button button4">
+                BRAMPTON RESIDENT SENIOR FARES
+            </button>
+
+            <div class="modal fade" tabindex="-1" id="loginModal1"
+                 data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <b>Important Updates:</b>
+                            <p>
+                                <ul>
+                                    <li> Senior ID cards will not be renewed until further notice.</li>
+                                    <li>All active senior ID card expiry dates have been waived indefinitely. Cards can continue to be used until further notice.</li>
+                                    <li>
+                                        Fare payment is in effect. Riders are encouraged to use PRESTO as a form of contactless payment. Click here for more information.
+                                    </li>
+                                </ul>
+                            <p>
+                                Are you a Brampton resident and 65 years of age or older? Show your Brampton Transit Senior Identification card to take advantage of special discounts.
+                            </p>
+
+                            <ul>
+                                <li><b>Senior $1 Cash Fare:</b> If you're a casual rider, this is your best option. Learn more.</li>
+                                <li>
+                                    <b>Senior Resident Monthly Pass:</b> Travel frequently? Then this is the pass for you. Learn more.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btnHideModal1" class="btn btn-primary button button4">
+                                OK
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- button 3-->
+    <div class="row">
+        <div class="col-xs-12">
+
+            <button id="btnShowModal2" type="button"
+                    class="btn btn-sm btn-default pull-left col-lg-11 button button4">
+                AFFORDABLE TRANSIT PROGRAM
+            </button>
+
+            <div class="modal fade" tabindex="-1" id="loginModal2"
+                 data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>
+                                Public Transit is a participant in the Region of Peel’s Affordable Transit Program.
+
+                                This program is a partnership between the Region of Peel, the City of Brampton, and the City of Mississauga to offer a 50% discount on the regular cost of a monthly pass to eligible applicants.
+
+                                Brampton residents earning an income below the Low Income Measure (LIM) thresholds are eligible to apply for the subsidy by visiting www.peelregion.ca/affordabletransit. Applications will be accepted on a first come, first serve basis.
+                            </p>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btnHideModal2" class="btn btn-primary button button4">
+                                OK
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- button 4-->
+    <div class="row">
+        <div class="col-xs-12">
+
+            <button id="btnShowModal3" type="button"
+                    class="btn btn-sm btn-default pull-left col-lg-11 button button4">
+                VETERAN PASS PROGRAM
+            </button>
+
+            <div class="modal fade" tabindex="-1" id="loginModal3"
+                 data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>
+                                City Council and Public Transit are proud to honour the accomplishments and sacrifices of all Canadian Armed Forces members.  Veterans who are residents of Brampton can ride Public Transit for free when they show their valid Public Transit Veteran Pass upon boarding.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btnHideModal3" class="btn btn-primary button button4">
+                                OK
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- button 5-->
+    <div class="row">
+        <div class="col-xs-12">
+
+            <button id="btnShowModal4" type="button"
+                    class="btn btn-sm btn-default pull-left col-lg-11 button button4">
+                BUS FARES
+            </button>
+
+            <div class="modal fade" tabindex="-1" id="loginModal4"
+                 data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>PRESTO FARES</p>
+                            <table border="1">
+                                <tr>
+                                    <th align="center">Fare Type</th>
+                                    <th align="center">Adult*</th>
+                                    <th align="center">Youth*</th>
+                                    <th align="center">Senior*</th>
+                                    <th align="center">Senior Residents*</th>
+                                    <th align="center">Child*</th>
+                                    <th align="center">Preschool Child*</th>
+
+                                </tr>
+                                <tr>
+                                    <td align="center">Per Trip</td>
+                                    <td align="center">$3.10</td>
+                                    <td align="center">$2.55</td>
+                                    <td align="center">$1.60</td>
+                                    <td align="center">$1.00</td>
+                                    <td align="center">$2.00</td>
+                                    <td align="center">Free</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Weekly Pass</td>
+                                    <td align="center">$34.00</td>
+                                    <td align="center">$27.50</td>
+                                    <td align="center">-</td>
+                                    <td align="center">-</td>
+                                    <td align="center">$22.00</td>
+                                    <td align="center">Free</td>
+                                </tr>
+                                <tr>
+                                    <td align="center">Monthly Pass</td>
+                                    <td align="center">$128.00</td>
+                                    <td align="center">$107.00</td>
+                                    <td align="center">-</td>
+                                    <td align="center">$15.00</td>
+                                    <td align="center">$84.00</td>
+                                    <td align="center">Free</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btnHideModal4" class="btn btn-primary button button4">
+                                OK
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
